@@ -1,0 +1,241 @@
+/* ----------------- Base Styles ----------------- */
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f3f4f6;
+  color: #111827;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* vertical scroll के लिए flex-start */
+  padding: 20px 0;
+}
+
+.app {
+  max-width: 1200px;   /* Desktop max width */
+  width: 90%;          /* Flexible for small devices */
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ----------------- Header ----------------- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  flex-wrap: wrap; /* Mobile पर wrap */
+}
+
+.counter {
+  font-size: 14px;
+  color: #374151;
+  margin-top: 8px; /* Mobile spacing */
+}
+
+/* ----------------- Main Grid ----------------- */
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.search {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+
+
+.hint {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* ----------------- Form ----------------- */
+.form {
+  display: grid;
+  gap: 12px;
+}
+
+.form-group {
+  display: grid;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 12px;
+  color: #555;
+}
+
+input, textarea, select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  width: 100%; /* responsive */
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.form-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  flex-wrap: wrap; /* responsive */
+}
+
+button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #0ea5e9;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  flex: 1; /* flexible width in form row */
+}
+
+button:disabled {
+  background: #e5e7eb;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+/* ----------------- Ticket ----------------- */
+.ticket-list {
+  display: grid;
+  gap: 12px;
+}
+
+.ticket {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 12px;
+  border-radius: 10px;
+  display: grid;
+  gap: 8px;
+}
+
+.ticket-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* responsive */
+}
+
+.ticket p {
+  margin: 0;
+  font-size: 14px;
+  color: #374151;
+}
+
+.ticket-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap; /* responsive */
+}
+
+.status.open {
+  color: #92400e;
+  font-size: 12px;
+}
+
+.status.closed {
+  color: #065f46;
+  font-size: 12px;
+}
+
+.ticket-footer button {
+  margin-left: auto;
+  background: #f3f4f6;
+  color: #111;
+  border: 1px solid #ddd;
+}
+
+/* Empty state */
+.empty {
+  text-align: center;
+  color: #6b7280;
+  padding: 20px;
+}
+
+/* Ticket headline */
+.ticket-headline {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #374151;
+  flex-wrap: wrap; /* responsive */
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  font-size: 12px;
+  color: #9ca3af;
+  margin-top: 20px;
+}
+
+/* ----------------- Responsive Media Queries ----------------- */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .main {
+    grid-template-columns: 1fr; /* Single column */
+  }
+
+  .form-row button {
+    flex: 1 1 100%; /* Full width buttons */
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  body {
+    padding: 10px 0;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .counter {
+    margin-top: 10px;
+  }
+
+  input, textarea, select, button {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .ticket p {
+    font-size: 13px;
+  }
+
+  .ticket-headline {
+    font-size: 13px;
+  }
+}
